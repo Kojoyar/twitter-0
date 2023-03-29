@@ -8,8 +8,6 @@ import { TextareaAutosize, IconButton, Typography, Button, FormControl, FormGrou
 //icons
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import ClearIcon from '@mui/icons-material/Clear';
-
-
 import ModalBlock from '../../ModalBlock/ModalBlock';
 import { useProfile } from '../../../contexts/profileContext';
 import icon6 from '../img/chaika.jpeg'
@@ -20,13 +18,7 @@ const EditProfile = ({ maxRows }) => {
 	const [value, setValue] = React.useState(0);
 	const {
 		avatar,
-		visibleEditProfile,
-		getCurrentUser,
-		getProductDetails,
-		saveEditedProfile,
-		handleClickOpenEditProfile,
 		onCloseEditProfile,
-		setAvatar,
 		handlePhotoChange,
 		deletePhoto
 	} = useProfile();

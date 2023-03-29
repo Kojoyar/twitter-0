@@ -6,7 +6,6 @@ import PeopleIcon from '@mui/icons-material/People';
 import ModeCommentIcon from '@mui/icons-material/ModeComment';
 import './SignIn.scss';
 import { useNavigate } from 'react-router-dom';
-import { authContext } from '../../contexts/authContext';
 import ModalBlock from '../../components/ModalBlock/ModalBlock';
 
 
@@ -24,7 +23,7 @@ function SignIn() {
     setVisibleModal('');
   };
 
-  const { handleRegister, handleLogin, setError } = useContext(authContext);
+  // const { handleRegister, handleLogin, setError } = useContext(authContext);
   const [emailLog, setEmailLog] = useState('');
   const [passwordLog, setPasswordLog] = useState('');
 
@@ -35,9 +34,9 @@ function SignIn() {
   const [data, setData] = useState([]);
 
 
-  useEffect(() => {
-    setError(false);
-  }, []);
+  // useEffect(() => {
+  //   setError(false);
+  // }, []);
 
   function handleSave() {
     if (!email.trim() || !password.trim() || !passwordConfirm.trim() || !email.trim()) {
@@ -51,7 +50,7 @@ function SignIn() {
       'password2': passwordConfirm,
       'date_of_birth': data
     }
-    handleRegister(obj);
+    // handleRegister(obj);
     handleCloseModal()
     handleClickOpenSignIn()
   };
@@ -62,7 +61,7 @@ function SignIn() {
       'email': emailLog,
       'password': passwordLog
     }
-    handleLogin(obj, emailLog, navigate);
+    // handleLogin(obj, emailLog, navigate);
   };
 
 

@@ -4,7 +4,6 @@ import { Routes, Route } from 'react-router-dom';
 import ProductContextProvider from './pages/Store/contexts/ProductContextProvider'
 import LikeContextProvider from './pages/Store/contexts/CustomContext'
 import CartContextProvider from './pages/Store/contexts/CartContextProvider'
-import AuthContextProvider from './contexts/authContext';
 import ProfileContextProvider from './contexts/profileContext';
 // pages 
 import SignIn from './pages/SignIn/SignIn';
@@ -62,13 +61,11 @@ const MainRoutes = () => {
 				<LikeContextProvider>
 					<CartContextProvider>
 						<ProfileContextProvider>
-							<AuthContextProvider>
 								<Routes>
 									{PUBLIC_ROUTES.map((item) => (
 										<Route path={item.link} element={token ? item.element : <SignIn />} key={item.id} />
 									))}
 								</Routes>
-							</AuthContextProvider>
 						</ProfileContextProvider>
 					</CartContextProvider>
 				</LikeContextProvider>
